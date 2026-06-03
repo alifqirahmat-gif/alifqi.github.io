@@ -3,20 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Alifqi</title>
+    <title>Portofolio Profesional | Alifqi</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+        }
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        /* Profil Header */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+        }
+        header h1 {
+            font-size: 2.8rem;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+        header h1 span { color: var(--accent); }
+        header p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+        /* Section */
+        section { margin-bottom: 50px; }
+        section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+        }
+        /* Grid Project */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-info { padding: 25px; }
+        .project-info h3 { margin-bottom: 10px; color: var(--text-main); }
+        .project-info p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
+        .btn-download {
+            display: inline-block;
+            background: var(--accent);
+            color: #0f172a;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        /* Kontak */
+        .social-links a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+        .social-links a:hover { text-decoration: underline; }
+    </style>
 </head>
-<body style="text-align: center; font-family: sans-serif; padding-top: 50px; background-color: #f0f0f0;">
+<body>
 
-    <h1>Halo, Saya Alifqi</h1>
-    <p>Selamat datang di website portofolio saya yang sedang dalam masa perbaikan.</p>
-    
-    <hr style="width: 50%; margin: 20px auto;">
+    <div class="container">
+        <header>
+            <img src="muka-alifqi.jpg" alt="Foto Alifqi" class="profile-img">
+            <h1>Halo, Saya <span>Alifqi</span></h1>
+            <p>Web Developer & Tech Enthusiast</p>
+        </header>
 
-    <h3>Kontak Saya:</h3>
-    <p>
-        <a href="https://github.com/alifqirahmat-gif" target="_blank">GitHub</a> | 
-        <a href="mailto:emailanda@gmail.com">Email</a>
-    </p>
+        <section>
+            <h2>Tentang Saya</h2>
+            <p style="color: var(--text-muted);">Saya adalah seorang developer yang fokus membangun solusi digital yang bersih, cepat, dan responsif. Berpengalaman dalam mengelola proyek berbasis web dan senang mempelajari teknologi baru.</p>
+        </section>
+
+        <section>
+            <h2>Hasil Project & File</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Sertifikat / Desain Project</h3>
+                        <p>Dokumen hasil kerja atau sertifikat keahlian yang telah saya selesaikan.</p>
+                        <a href="dokumen-project.pdf" class="btn-download" download>Unduh File Proyek</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Aplikasi Web Portofolio</h3>
+                        <p>Source code dan dokumentasi lengkap dari sistem website yang saya kembangkan.</p>
+                        <a href="https://github.com/alifqirahmat" target="_blank" class="btn-download" style="background: transparent; color: var(--accent); border: 1px solid var(--accent);">Lihat Kodingan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Mari Terhubung</h2>
+            <div class="social-links">
+                <a href="https://github.com/alifqirahmat" target="_blank">GitHub</a>
+                <a href="mailto:emailanda@gmail.com">Email</a>
+            </div>
+        </section>
+    </div>
 
 </body>
 </html>
