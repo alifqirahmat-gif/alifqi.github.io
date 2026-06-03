@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Alifqi</title>
     <style>
-        /* CSS langsung digabung agar mudah di-upload */
         * {
             margin: 0;
             padding: 0;
@@ -13,105 +12,113 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background-color: #f8f9fa;
+            background-color: #f4f7f6;
             color: #333;
             line-height: 1.6;
-        }
-        header {
-            background: #2b3e50;
-            color: #fff;
-            padding: 20px 0;
-            text-align: center;
+            padding: 20px;
         }
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 40px 0;
-        }
-        .hero {
-            text-align: center;
+            max-width: 800px;
+            margin: 40px auto;
             background: #fff;
-            padding: 50px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .hero h1 {
-            color: #2b3e50;
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
             margin-bottom: 10px;
         }
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #2b3e50;
-            position: relative;
+        header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
         }
-        .grid {
-            display: block;
+        section {
+            margin-bottom: 35px;
         }
-        .card {
-            background: #fff;
+        section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 600px) {
+            .project-grid { grid-template-columns: 1fr; }
+        }
+        .project-card {
+            background: #f8f9fa;
             padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border-left: 5px solid #2b3e50;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
         }
-        .card h3 {
-            margin-bottom: 10px;
-            color: #2b3e50;
+        .project-card h3 {
+            margin-bottom: 8px;
+            color: #34495e;
         }
-        footer {
-            background: #2b3e50;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-        .btn {
+        .contact-links a {
             display: inline-block;
-            background: #2b3e50;
-            color: #fff;
-            padding: 10px 20px;
+            margin-right: 15px;
+            color: #3498db;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 15px;
+            font-weight: bold;
         }
-        .btn:hover {
-            background: #1a252f;
+        .contact-links a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h2>Portofolio Saya</h2>
-    </header>
-
     <div class="container">
-        <div class="hero">
-            <h1>Halo, Saya Alifqi</h1>
-            <p>Welcome to my professional portfolio. Saya adalah seorang [Keahlian Anda].</p>
-            <a href="mailto:emailanda@gmail.com" class="btn">Hubungi Saya</a>
-        </div>
+        <!-- Header / Profil -->
+        <header>
+            <h1>Alifqi</h1>
+            <p>Web Developer / Designer | Selamat datang di portofolio saya</p>
+        </header>
 
-        <h2 class="section-title">Proyek Saya</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Nama Proyek 1</h3>
-                <p>Deskripsi singkat tentang proyek pertama Anda, teknologi yang digunakan, dan hasil yang dicapai.</p>
+        <!-- Tentang Saya -->
+        <section>
+            <h2>Tentang Saya</h2>
+            <p>Halo! Saya Alifqi. Saya tertarik dengan pengembangan web dan teknologi. Saat ini saya sedang belajar membangun website yang interaktif dan responsif menggunakan HTML, CSS, dan JavaScript.</p>
+        </section>
+
+        <!-- Project -->
+        <section>
+            <h2>Project Saya</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Project Pertama</h3>
+                    <p>Deskripsi singkat tentang project atau website yang pernah Anda buat di sini.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project Kedua</h3>
+                    <p>Deskripsi singkat tentang project atau website yang pernah Anda buat di sini.</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Nama Proyek 2</h3>
-                <p>Deskripsi singkat tentang proyek kedua Anda, teknologi yang digunakan, dan hasil yang dicapai.</p>
+        </section>
+
+        <!-- Kontak -->
+        <section>
+            <h2>Kontak</h2>
+            <p>Mari terhubung! Anda bisa menghubungi saya melalui platform di bawah ini:</p>
+            <div class="contact-links" style="margin-top: 15px;">
+                <a href="https://github.com/alifqirahmat-gif" target="_blank">GitHub</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                <a href="mailto:emailanda@gmail.com">Email</a>
             </div>
-        </div>
+        </section>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Alifqi. All Rights Reserved.</p>
-    </footer>
 
 </body>
 </html>
