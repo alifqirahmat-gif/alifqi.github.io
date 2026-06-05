@@ -15,7 +15,7 @@
 
         body {
             background-color: #ffffff;
-            color: #333333;
+            color: #2d3748; /* Warna teks abu-abu gelap agar lebih lembut dibanding hitam pekat */
             line-height: 1.6;
         }
 
@@ -26,7 +26,7 @@
             left: 0;
             width: 100%;
             background-color: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid #eeeeee;
+            border-bottom: 1px solid #e2e8f0;
             z-index: 1000;
         }
 
@@ -42,7 +42,7 @@
         .logo {
             font-size: 24px;
             font-weight: bold;
-            color: #111111;
+            color: #1a202c;
         }
 
         .nav-links {
@@ -56,31 +56,43 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #555555;
+            color: #4a5568;
             font-weight: 500;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #000000;
+            color: #3182ce; /* Aksen warna biru lembut saat hover */
         }
 
         /* Section Base */
         section {
-            padding: 100px 20px 80px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
+            padding: 120px 20px 100px 20px;
+            max-width: 100%;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
+        .section-container {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Variasi Background Section Selang-seling agar tidak monoton */
+        #home { background-color: #ffffff; }
+        #certificates { background-color: #f7fafc; border-top: 1px solid #edf2f7; border-bottom: 1px solid #edf2f7; }
+        #skills { background-color: #ffffff; }
+        #contact { background-color: #f7fafc; border-top: 1px solid #edf2f7; }
+
         h2 {
             font-size: 32px;
             margin-bottom: 40px;
             text-align: center;
             position: relative;
+            color: #1a202c;
         }
 
         h2::after {
@@ -88,12 +100,13 @@
             display: block;
             width: 50px;
             height: 3px;
-            background-color: #333333;
+            background-color: #3182ce; /* Garis bawah aksen biru */
             margin: 10px auto 0 auto;
+            border-radius: 2px;
         }
 
         /* Home Section */
-        #home {
+        .home-content {
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -107,13 +120,14 @@
 
         .home-text h1 {
             font-size: 48px;
-            color: #111111;
-            margin-bottom: 10px;
+            color: #1a202c;
+            margin-bottom: 15px;
+             Tarik perhatian */
         }
 
         .home-text p {
             font-size: 18px;
-            color: #666666;
+            color: #718096;
             margin-bottom: 20px;
         }
 
@@ -127,8 +141,8 @@
             height: 300px;
             border-radius: 50%;
             object-fit: cover;
-            border: 8px solid #f5f5f5;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 8px solid #edf2f7;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
         }
 
         /* Certificates Section */
@@ -140,20 +154,26 @@
 
         .cert-card {
             background: #ffffff;
-            border: 1px solid #eaeaea;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            transition: transform 0.3s;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
         }
 
         .cert-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border-color: #cbd5e0;
         }
 
         .cert-card h3 {
             margin-bottom: 10px;
-            color: #111111;
+            color: #2d3748;
+        }
+
+        .cert-card p {
+            color: #718096;
         }
 
         /* Skills Section */
@@ -165,13 +185,20 @@
         }
 
         .skill-badge {
-            background-color: #f5f5f5;
-            color: #333333;
+            background-color: #edf2f7;
+            color: #2d3748;
             padding: 12px 25px;
             border-radius: 30px;
             font-weight: 500;
             font-size: 16px;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+
+        .skill-badge:hover {
+            background-color: #3182ce;
+            color: #ffffff;
+            border-color: #3182ce;
         }
 
         /* Contact Section */
@@ -183,11 +210,13 @@
 
         .contact-info h3 {
             margin-bottom: 15px;
+            color: #1a202c;
         }
 
         .contact-info p {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-size: 16px;
+            color: #4a5568;
         }
 
         .contact-form form {
@@ -198,44 +227,54 @@
 
         .contact-form input, .contact-form textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #cccccc;
-            border-radius: 4px;
+            padding: 14px;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
             background-color: #ffffff;
             font-size: 14px;
+            color: #2d3748;
+            transition: border-color 0.2s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: #3182ce;
         }
 
         .contact-form button {
-            padding: 12px;
-            background-color: #111111;
+            padding: 14px;
+            background-color: #1a202c;
             color: #ffffff;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 16px;
             transition: background 0.3s;
         }
 
         .contact-form button:hover {
-            background-color: #333333;
+            background-color: #3182ce;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            #home {
+            .home-content {
                 flex-direction: column-reverse;
                 text-align: center;
-                padding-top: 120px;
             }
             .contact-container {
                 grid-template-columns: 1fr;
             }
             nav {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
             }
             .nav-links li {
                 margin: 0 10px;
+            }
+            section {
+                padding: 100px 20px 60px 20px;
             }
         }
     </style>
@@ -261,13 +300,15 @@
     <!-- BAGIAN YANG BISA DIEDIT: HOME (TAMPILAN AWAL) -->
     <!-- ========================================== -->
     <section id="home">
-        <div class="home-text">
-            <h1>Halo, Saya Alifqi</h1>
-            <p>Saya seorang profesional yang berfokus pada bidang keahlian saya. Selamat datang di website portofolio pribadi saya.</p>
-        </div>
-        <div class="home-img">
-            <!-- Ganti 'https://via.placeholder.com/300' dengan link foto muka Anda -->
-            <img src="https://via.placeholder.com/300" alt="Foto Alifqi">
+        <div class="section-container home-content">
+            <div class="home-text">
+                <h1>Halo, Saya Alifqi</h1>
+                <p>Saya seorang profesional yang berfokus pada bidang keahlian saya. Selamat datang di website portofolio pribadi saya.</p>
+            </div>
+            <div class="home-img">
+                <!-- Ganti 'https://via.placeholder.com/300' dengan link foto muka Anda -->
+                <img src="https://via.placeholder.com/300" alt="Foto Alifqi">
+            </div>
         </div>
     </section>
 
@@ -275,30 +316,32 @@
     <!-- BAGIAN YANG BISA DIEDIT: SERTIFIKAT -->
     <!-- ========================================== -->
     <section id="certificates">
-        <h2>Sertifikat</h2>
-        <div class="cert-grid">
-            
-            <!-- Sertifikat 1 -->
-            <div class="cert-card">
-                <h3>Nama Sertifikat 1</h3>
-                <p>Penerbit: Google / Dicoding / dll</p>
-                <p style="color: #888888; font-size: 14px;">Tahun Terbit: 2026</p>
-            </div>
+        <div class="section-container">
+            <h2>Sertifikat</h2>
+            <div class="cert-grid">
+                
+                <!-- Sertifikat 1 -->
+                <div class="cert-card">
+                    <h3>Nama Sertifikat 1</h3>
+                    <p>Penerbit: Google / Dicoding / dll</p>
+                    <p style="color: #a0aec0; font-size: 14px; margin-top: 5px;">Tahun Terbit: 2026</p>
+                </div>
 
-            <!-- Sertifikat 2 -->
-            <div class="cert-card">
-                <h3>Nama Sertifikat 2</h3>
-                <p>Penerbit: Lembaga Kursus</p>
-                <p style="color: #888888; font-size: 14px;">Tahun Terbit: 2025</p>
-            </div>
+                <!-- Sertifikat 2 -->
+                <div class="cert-card">
+                    <h3>Nama Sertifikat 2</h3>
+                    <p>Penerbit: Lembaga Kursus</p>
+                    <p style="color: #a0aec0; font-size: 14px; margin-top: 5px;">Tahun Terbit: 2025</p>
+                </div>
 
-            <!-- Sertifikat 3 -->
-            <div class="cert-card">
-                <h3>Nama Sertifikat 3</h3>
-                <p>Penerbit: Universitas / Instansi</p>
-                <p style="color: #888888; font-size: 14px;">Tahun Terbit: 2025</p>
-            </div>
+                <!-- Sertifikat 3 -->
+                <div class="cert-card">
+                    <h3>Nama Sertifikat 3</h3>
+                    <p>Penerbit: Universitas / Instansi</p>
+                    <p style="color: #a0aec0; font-size: 14px; margin-top: 5px;">Tahun Terbit: 2025</p>
+                </div>
 
+            </div>
         </div>
     </section>
 
@@ -306,14 +349,16 @@
     <!-- BAGIAN YANG BISA DIEDIT: KEMAMPUAN / SKIL -->
     <!-- ========================================== -->
     <section id="skills">
-        <h2>Skil Kemampuan</h2>
-        <div class="skills-container">
-            <!-- Tambah atau ubah skil Anda di bawah ini -->
-            <div class="skill-badge">HTML & CSS</div>
-            <div class="skill-badge">JavaScript</div>
-            <div class="skill-badge">Desain Grafis</div>
-            <div class="skill-badge">Manajemen Proyek</div>
-            <div class="skill-badge">Public Speaking</div>
+        <div class="section-container">
+            <h2>Skil Kemampuan</h2>
+            <div class="skills-container">
+                <!-- Tambah atau ubah skil Anda di bawah ini -->
+                <div class="skill-badge">HTML & CSS</div>
+                <div class="skill-badge">JavaScript</div>
+                <div class="skill-badge">Desain Grafis</div>
+                <div class="skill-badge">Manajemen Proyek</div>
+                <div class="skill-badge">Public Speaking</div>
+            </div>
         </div>
     </section>
 
@@ -321,26 +366,28 @@
     <!-- BAGIAN YANG BISA DIEDIT: KONTAK & EMAIL FORM -->
     <!-- ========================================== -->
     <section id="contact">
-        <h2>Hubungi Saya</h2>
-        <div class="contact-container">
-            
-            <div class="contact-info">
-                <h3>Kontak Informasi</h3>
-                <p><strong>No. HP:</strong> +62 812 3456 7890</p>
-                <p><strong>Email:</strong> alifqi@example.com</p>
-                <p>Silakan hubungi saya melalui kontak di atas atau isi form di samping untuk mengirim pesan langsung ke email saya.</p>
-            </div>
+        <div class="section-container">
+            <h2>Hubungi Saya</h2>
+            <div class="contact-container">
+                
+                <div class="contact-info">
+                    <h3>Kontak Informasi</h3>
+                    <p><strong>No. HP:</strong> +62 812 3456 7890</p>
+                    <p><strong>Email:</strong> alifqi@example.com</p>
+                    <p>Silakan hubungi saya melalui kontak di atas atau isi form di samping untuk mengirim pesan langsung ke email saya.</p>
+                </div>
 
-            <div class="contact-form">
-                <!-- GANTI 'alifqi@example.com' dengan email asli Anda agar form berfungsi -->
-                <form action="https://formsubmit.co/alifqi@example.com" method="POST">
-                    <input type="text" name="name" placeholder="Nama Anda" required>
-                    <input type="email" name="email" placeholder="Email Anda" required>
-                    <textarea name="message" rows="5" placeholder="Pesan Anda" required></textarea>
-                    <button type="submit">Kirim Pesan</button>
-                </form>
-            </div>
+                <div class="contact-form">
+                    <!-- GANTI 'alifqi@example.com' dengan email asli Anda agar form berfungsi -->
+                    <form action="https://formsubmit.co/alifqi@example.com" method="POST">
+                        <input type="text" name="name" placeholder="Nama Anda" required>
+                        <input type="email" name="email" placeholder="Email Anda" required>
+                        <textarea name="message" rows="5" placeholder="Pesan Anda" required></textarea>
+                        <button type="submit">Kirim Pesan</button>
+                    </form>
+                </div>
 
+            </div>
         </div>
     </section>
 
