@@ -3,144 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Profesional | Alifqi</title>
+    <title>Portofolio Saya</title>
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-        }
         * {
-            margin: 0; padding: 0; box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
+
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: #ffffff;
+            color: #333333;
             line-height: 1.6;
-            padding: 20px;
         }
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 20px;
-        }
-        /* Profil Header */
+
+        /* Navbar */
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #eeeeee;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #111111;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #000000;
+        }
+
+        /* Section Base */
+        section {
+            padding: 100px 20px 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
             text-align: center;
-            margin-bottom: 60px;
+            position: relative;
         }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--accent);
-            margin-bottom: 20px;
-            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #333333;
+            margin: 10px auto 0 auto;
         }
-        header h1 {
-            font-size: 2.8rem;
-            letter-spacing: -1px;
+
+        /* Home Section */
+        #home {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .home-text {
+            flex: 1;
+        }
+
+        .home-text h1 {
+            font-size: 48px;
+            color: #111111;
             margin-bottom: 10px;
         }
-        header h1 span { color: var(--accent); }
-        header p {
-            color: var(--text-muted);
-            font-size: 1.2rem;
+
+        .home-text p {
+            font-size: 18px;
+            color: #666666;
+            margin-bottom: 20px;
         }
-        /* Section */
-        section { margin-bottom: 50px; }
-        section h2 {
-            font-size: 1.6rem;
-            margin-bottom: 25px;
-            border-left: 5px solid var(--accent);
-            padding-left: 15px;
+
+        .home-img {
+            flex: 1;
+            text-align: center;
         }
-        /* Grid Project */
-        .project-grid {
+
+        .home-img img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid #f5f5f5;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Certificates Section */
+        .cert-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
-        .project-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #334155;
-            transition: transform 0.3s ease;
+
+        .cert-card {
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s;
         }
-        .project-card:hover {
+
+        .cert-card:hover {
             transform: translateY(-5px);
         }
-        .project-info { padding: 25px; }
-        .project-info h3 { margin-bottom: 10px; color: var(--text-main); }
-        .project-info p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
-        .btn-download {
-            display: inline-block;
-            background: var(--accent);
-            color: #0f172a;
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
+
+        .cert-card h3 {
+            margin-bottom: 10px;
+            color: #111111;
         }
-        /* Kontak */
-        .social-links a {
-            color: var(--accent);
-            text-decoration: none;
-            margin-right: 20px;
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .skill-badge {
+            background-color: #f5f5f5;
+            color: #333333;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 16px;
+            border: 1px solid #e0e0e0;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            background-color: #ffffff;
+            font-size: 14px;
+        }
+
+        .contact-form button {
+            padding: 12px;
+            background-color: #111111;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
             font-weight: bold;
+            transition: background 0.3s;
         }
-        .social-links a:hover { text-decoration: underline; }
+
+        .contact-form button:hover {
+            background-color: #333333;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #home {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 120px;
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav-links li {
+                margin: 0 10px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <img src="muka-alifqi.jpg" alt="Foto Alifqi" class="profile-img">
-            <h1>Halo, Saya <span>Alifqi</span></h1>
-            <p>Web Developer & Tech Enthusiast</p>
-        </header>
+    <!-- ========================================== -->
+    <!-- BAGIAN YANG BISA DIEDIT: NAMA LOGO & NAVIGASI -->
+    <!-- ========================================== -->
+    <header>
+        <nav>
+            <div class="logo">Portofolio.</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#certificates">Sertifikat</a></li>
+                <li><a href="#skills">Skil</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <section>
-            <h2>Tentang Saya</h2>
-            <p style="color: var(--text-muted);">Saya adalah seorang developer yang fokus membangun solusi digital yang bersih, cepat, dan responsif. Berpengalaman dalam mengelola proyek berbasis web dan senang mempelajari teknologi baru.</p>
-        </section>
+    <!-- ========================================== -->
+    <!-- BAGIAN YANG BISA DIEDIT: HOME (TAMPILAN AWAL) -->
+    <!-- ========================================== -->
+    <section id="home">
+        <div class="home-text">
+            <h1>Halo, Saya Alifqi</h1>
+            <p>Saya seorang profesional yang berfokus pada bidang keahlian saya. Selamat datang di website portofolio pribadi saya.</p>
+        </div>
+        <div class="home-img">
+            <!-- Ganti 'https://via.placeholder.com/300' dengan link foto muka Anda -->
+            <img src="https://via.placeholder.com/300" alt="Foto Alifqi">
+        </div>
+    </section>
 
-        <section>
-            <h2>Hasil Project & File</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Sertifikat / Desain Project</h3>
-                        <p>Dokumen hasil kerja atau sertifikat keahlian yang telah saya selesaikan.</p>
-                        <a href="dokumen-project.pdf" class="btn-download" download>Unduh File Proyek</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Aplikasi Web Portofolio</h3>
-                        <p>Source code dan dokumentasi lengkap dari sistem website yang saya kembangkan.</p>
-                        <a href="https://github.com/alifqirahmat" target="_blank" class="btn-download" style="background: transparent; color: var(--accent); border: 1px solid var(--accent);">Lihat Kodingan</a>
-                    </div>
-                </div>
+    <!-- ========================================== -->
+    <!-- BAGIAN YANG BISA DIEDIT: SERTIFIKAT -->
+    <!-- ========================================== -->
+    <section id="certificates">
+        <h2>Sertifikat</h2>
+        <div class="cert-grid">
+            
+            <!-- Sertifikat 1 -->
+            <div class="cert-card">
+                <h3>Nama Sertifikat 1</h3>
+                <p>Penerbit: Google / Dicoding / dll</p>
+                <p style="color: #888888; font-size: 14px;">Tahun Terbit: 2026</p>
             </div>
-        </section>
 
-        <section>
-            <h2>Mari Terhubung</h2>
-            <div class="social-links">
-                <a href="https://github.com/alifqirahmat" target="_blank">GitHub</a>
-                <a href="mailto:emailanda@gmail.com">Email</a>
+            <!-- Sertifikat 2 -->
+            <div class="cert-card">
+                <h3>Nama Sertifikat 2</h3>
+                <p>Penerbit: Lembaga Kursus</p>
+                <p style="color: #888888; font-size: 14px;">Tahun Terbit: 2025</p>
             </div>
-        </section>
-    </div>
+
+            <!-- Sertifikat 3 -->
+            <div class="cert-card">
+                <h3>Nama Sertifikat 3</h3>
+                <p>Penerbit: Universitas / Instansi</p>
+                <p style="color: #888888; font-size: 14px;">Tahun Terbit: 2025</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- BAGIAN YANG BISA DIEDIT: KEMAMPUAN / SKIL -->
+    <!-- ========================================== -->
+    <section id="skills">
+        <h2>Skil Kemampuan</h2>
+        <div class="skills-container">
+            <!-- Tambah atau ubah skil Anda di bawah ini -->
+            <div class="skill-badge">HTML & CSS</div>
+            <div class="skill-badge">JavaScript</div>
+            <div class="skill-badge">Desain Grafis</div>
+            <div class="skill-badge">Manajemen Proyek</div>
+            <div class="skill-badge">Public Speaking</div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- BAGIAN YANG BISA DIEDIT: KONTAK & EMAIL FORM -->
+    <!-- ========================================== -->
+    <section id="contact">
+        <h2>Hubungi Saya</h2>
+        <div class="contact-container">
+            
+            <div class="contact-info">
+                <h3>Kontak Informasi</h3>
+                <p><strong>No. HP:</strong> +62 812 3456 7890</p>
+                <p><strong>Email:</strong> alifqi@example.com</p>
+                <p>Silakan hubungi saya melalui kontak di atas atau isi form di samping untuk mengirim pesan langsung ke email saya.</p>
+            </div>
+
+            <div class="contact-form">
+                <!-- GANTI 'alifqi@example.com' dengan email asli Anda agar form berfungsi -->
+                <form action="https://formsubmit.co/alifqi@example.com" method="POST">
+                    <input type="text" name="name" placeholder="Nama Anda" required>
+                    <input type="email" name="email" placeholder="Email Anda" required>
+                    <textarea name="message" rows="5" placeholder="Pesan Anda" required></textarea>
+                    <button type="submit">Kirim Pesan</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
 
 </body>
 </html>
