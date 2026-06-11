@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Alifqi</title>
     <style>
-        /* --- ANIMASI PRELOADER --- */
+        /* --- ANIMASI PRELOADER DENGAN TULISAN --- */
         #preloader {
             position: fixed;
             top: 0;
@@ -15,18 +15,40 @@
             background-color: #ffffff;
             z-index: 9999;
             display: flex;
+            flex-direction: column; /* Menyusun tulisan dan loader ke bawah */
             justify-content: center;
             align-items: center;
+            gap: 20px; /* Jarak antara tulisan dan loader */
             transition: opacity 0.5s ease, visibility 0.5s ease;
         }
 
+        .loader-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1a202c;
+            letter-spacing: 1px;
+            animation: textFadeIn 1s ease-out forwards;
+        }
+
         .loader {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #edf2f7;
-            border-top: 5px solid #3182ce;
+            width: 45px;
+            height: 45px;
+            border: 4px solid #edf2f7;
+            border-top: 4px solid #3182ce;
             border-radius: 50%;
             animation: spin 1s linear infinite;
+        }
+
+        /* Animasi Tulisan Muncul */
+        @keyframes textFadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         @keyframes spin {
@@ -332,6 +354,7 @@
 <body class="loading">
 
     <div id="preloader">
+        <div class="loader-text">Portofolio Alifqi</div>
         <div class="loader"></div>
     </div>
 
@@ -436,12 +459,12 @@
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             
-            // Menahan animasi selama 1.5 detik sebelum masuk ke porto
+            // Menahan animasi selama 1.8 detik agar tulisan dan loader terlihat jelas
             setTimeout(() => {
                 preloader.style.opacity = '0';
                 preloader.style.visibility = 'hidden';
                 document.body.classList.remove('loading');
-            }, 1500); 
+            }, 1800); 
         });
 
         // --- SKILL SECTION INTERACTION ---
