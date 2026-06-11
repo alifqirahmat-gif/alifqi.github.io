@@ -5,61 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Alifqi</title>
     <style>
-        /* --- ANIMASI PRELOADER DENGAN TULISAN --- */
+        /* --- ANIMASI PRELOADER BERKUALITAS (TEMA TERMINAL TKJ) --- */
         #preloader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            background-color: #ffffff;
+            background-color: #0f172a; /* Warna gelap ala terminal */
             z-index: 9999;
             display: flex;
-            flex-direction: column; /* Menyusun tulisan dan loader ke bawah */
             justify-content: center;
             align-items: center;
-            gap: 20px; /* Jarak antara tulisan dan loader */
-            transition: opacity 0.5s ease, visibility 0.5s ease;
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
         }
 
-        .loader-text {
+        .terminal-box {
+            width: 90%;
+            max-width: 450px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #38bdf8; /* Biru terang khas IT */
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Animasi Efek Mengetik Log Sistem */
+        .log-line {
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            opacity: 0.8;
+            border-right: 2px solid transparent;
+        }
+
+        .log-1 { animation: typeLine 0.4s steps(20) forwards; animation-delay: 0.2s; }
+        .log-2 { animation: typeLine 0.4s steps(20) forwards; animation-delay: 0.7s; }
+        .log-3 { animation: typeLine 0.4s steps(20) forwards; animation-delay: 1.2s; }
+
+        /* Teks Utama Portofolio Alifqi */
+        .main-title {
             font-size: 28px;
             font-weight: bold;
-            color: #1a202c;
-            letter-spacing: 1px;
-            animation: textFadeIn 1s ease-out forwards;
+            color: #ffffff;
+            margin-top: 10px;
+            border-right: 3px solid #38bdf8;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            /* Mengetik lalu kursornya berkedip */
+            animation: 
+                typeLine 0.6s steps(20) forwards,
+                blinkCursor 0.6s step-end infinite alternate;
+            animation-delay: 1.8s;
         }
 
-        .loader {
-            width: 45px;
-            height: 45px;
-            border: 4px solid #edf2f7;
-            border-top: 4px solid #3182ce;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        /* Keyframes Animasi */
+        @keyframes typeLine {
+            from { width: 0; }
+            to { width: 100%; }
         }
 
-        /* Animasi Tulisan Muncul */
-        @keyframes textFadeIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes blinkCursor {
+            50% { border-color: transparent; }
         }
 
         body.loading {
             overflow: hidden;
         }
-        /* ---------------------------------- */
+        /* --------------------------------------------------------- */
 
         * {
             margin: 0;
@@ -354,8 +369,12 @@
 <body class="loading">
 
     <div id="preloader">
-        <div class="loader-text">Portofolio Alifqi</div>
-        <div class="loader"></div>
+        <div class="terminal-box">
+            <div class="log-line log-1">> Loading networks modules...</div>
+            <div class="log-line log-2">> Initializing TKJ repository...</div>
+            <div class="log-line log-3">> System status: [ READY ]</div>
+            <div class="main-title">ALIFQI_PORTO_</div>
+        </div>
     </div>
 
     <header>
@@ -414,7 +433,7 @@
 
     <section id="skills">
         <div class="section-container">
-            <h2>Skil Kemampuan</h2>
+            <h2>Skil Kemappan</h2>
             <div class="skills-container">
                 <div class="skill-badge">Konfigurasi Linux</div>
                 <div class="skill-badge">Konfigurasi Mikrotik</div>
@@ -459,12 +478,12 @@
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             
-            // Menahan animasi selama 1.8 detik agar tulisan dan loader terlihat jelas
+            // Jeda total ditahan selama 3.2 detik agar semua teks selesai mengetik bergantian
             setTimeout(() => {
                 preloader.style.opacity = '0';
                 preloader.style.visibility = 'hidden';
                 document.body.classList.remove('loading');
-            }, 1800); 
+            }, 3200); 
         });
 
         // --- SKILL SECTION INTERACTION ---
