@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Alifqi</title>
     <style>
-        /* --- ANIMASI PRELOADER (TAMBAHAN) --- */
+        /* --- ANIMASI PRELOADER --- */
         #preloader {
             position: fixed;
             top: 0;
@@ -34,7 +34,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Menghilangkan scrollbar saat loading */
         body.loading {
             overflow: hidden;
         }
@@ -50,7 +49,7 @@
 
         body {
             background-color: #ffffff;
-            color: #2d3748; /* Warna teks abu-abu gelap agar lebih lembut dibanding hitam pekat */
+            color: #2d3748;
             line-height: 1.6;
         }
 
@@ -97,7 +96,7 @@
         }
 
         .nav-links a:hover {
-            color: #3182ce; /* Aksen warna biru lembut saat hover */
+            color: #3182ce;
         }
 
         /* Section Base */
@@ -116,7 +115,6 @@
             margin: 0 auto;
         }
 
-        /* Variasi Background Section Selang-seling agar tidak monoton */
         #home { background-color: #ffffff; }
         #certificates { background-color: #f7fafc; border-top: 1px solid #edf2f7; border-bottom: 1px solid #edf2f7; }
         #skills { background-color: #ffffff; }
@@ -135,7 +133,7 @@
             display: block;
             width: 50px;
             height: 3px;
-            background-color: #3182ce; /* Garis bawah aksen biru */
+            background-color: #3182ce;
             margin: 10px auto 0 auto;
             border-radius: 2px;
         }
@@ -227,7 +225,7 @@
             font-size: 16px;
             border: 1px solid #e2e8f0;
             transition: all 0.2s;
-            cursor: pointer; /* Menandakan bisa diklik */
+            cursor: pointer;
         }
 
         .skill-badge:hover {
@@ -236,7 +234,6 @@
             border-color: #3182ce;
         }
 
-        /* Gaya Pop-up Kustom untuk Pengertian Skil */
         .skill-desc-box {
             max-width: 600px;
             margin: 30px auto 0 auto;
@@ -244,7 +241,7 @@
             background-color: #ebf8ff;
             border-left: 5px solid #3182ce;
             border-radius: 8px;
-            display: none; /* Sembunyi secara default */
+            display: none;
             text-align: center;
             animation: fadeIn 0.4s ease;
         }
@@ -286,3 +283,187 @@
             background-color: #ffffff;
             font-size: 14px;
             color: #2d3748;
+            transition: border-color 0.2s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: #3182ce;
+        }
+
+        .contact-form button {
+            padding: 14px;
+            background-color: #1a202c;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #3182ce;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .home-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links li {
+                margin: 0 10px;
+            }
+            section {
+                padding: 100px 20px 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body class="loading">
+
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">Portofolio Alifqi.</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#certificates">Sertifikat</a></li>
+                <li><a href="#skills">Skil</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="section-container home-content">
+            <div class="home-text">
+                <h1>Halo, Saya Alifqi</h1>
+                <p>Saya seorang siswa TKJ dari SMK Wikrama Bogor yang adaptif dan siap kerja. 
+                    Melalui pembelajaran yang intensif di sekolah, saya telah dibekali kemampuan dasar dalam merancang,
+                    membangun, dan mengelola infrastruktur jaringan komputer. 
+                    Saya mencari peluang untuk mempraktikkan keahlian ini di dunia industri.</p>
+            </div>
+            <div class="home-img">
+                <img src="alifqinametag.jpg" alt="Foto Alifqi">
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates">
+        <div class="section-container">
+            <h2>Sertifikat</h2>
+            <div class="cert-grid">
+                
+                <div class="cert-card">
+                    <h3>Nama Sertifikat 1</h3>
+                    <p>Penerbit: Google / Dicoding / dll</p>
+                    <p style="color: #a0aec0; font-size: 14px; margin-top: 5px;">Tahun Terbit: 2026</p>
+                </div>
+
+                <div class="cert-card">
+                    <h3>Nama Sertifikat 2</h3>
+                    <p>Penerbit: Lembaga Kursus</p>
+                    <p style="color: #a0aec0; font-size: 14px; margin-top: 5px;">Tahun Terbit: 2025</p>
+                </div>
+
+                <div class="cert-card">
+                    <h3>Nama Sertifikat 3</h3>
+                    <p>Penerbit: Universitas / Instansi</p>
+                    <p style="color: #a0aec0; font-size: 14px; margin-top: 5px;">Tahun Terbit: 2025</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-container">
+            <h2>Skil Kemampuan</h2>
+            <div class="skills-container">
+                <div class="skill-badge">Konfigurasi Linux</div>
+                <div class="skill-badge">Konfigurasi Mikrotik</div>
+                <div class="skill-badge">Desain Grafis</div>
+                <div class="skill-badge">AWS Server</div>
+                <div class="skill-badge">Instalasi Kabel Jaringan (Cabling)</div>
+            </div>
+            
+            <div id="skill-desc" class="skill-desc-box"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-container">
+            <h2>Hubungi Saya</h2>
+            <div class="contact-container">
+                
+                <div class="contact-info">
+                    <h3>Kontak Informasi</h3>
+                    <p><strong>No. HP:</strong> +62 857 1901 7124</p>
+                    <p><strong>Email:</strong> alifqirahamat@gmail.com</p>
+                    <p><strong>Alamat:</strong> Bogor, Cigombong Villa Mutiara Lido</p>
+                    <p>Silakan hubungi saya melalui kontak di atas atau isi form di samping untuk mengirim pesan langsung ke email saya.</p>
+                </div>
+
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/alifqirahamat@gmail.com" method="POST">
+                        <input type="hidden" name="_next" value="https://formsubmit.co/thanks">
+                        <input type="text" name="name" placeholder="Nama Anda" required>
+                        <input type="email" name="email" placeholder="Email Anda" required>
+                        <textarea name="message" rows="5" placeholder="Pesan Anda" required></textarea>
+                        <button type="submit">Kirim Pesan</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // --- JAVASCRIPT PRELOADER DENGAN JEDA WAKTU ---
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            
+            // Menahan animasi selama 1.5 detik sebelum masuk ke porto
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+                document.body.classList.remove('loading');
+            }, 1500); 
+        });
+
+        // --- SKILL SECTION INTERACTION ---
+        const infoSkil = {
+            "Konfigurasi Linux": "Kemampuan mengoperasikan OS Linux, manajemen user, hak akses, serta instalasi dan konfigurasi layanan server berbasis open-source.",
+            "Konfigurasi Mikrotik": "Keahlian mengatur routerboard Mikrotik untuk keperluan routing, switching, bandwidth management (antrean), firewall, dan hotspot.",
+            "Desain Grafis": "Kemampuan merancang visual kreatif seperti layout, logo, banner, dan aset media digital menggunakan tools standar industri.",
+            "AWS Server": "Keahlian dasar cloud computing untuk mendeploy, mengelola, dan mengonfigurasi virtual server (EC2) serta penyimpanan di infrastruktur Amazon Web Services.",
+            "Instalasi Kabel Jaringan (Cabling)": "Keterampilan fisik dalam melakukan crimping kabel UTP (Straight/Cross), instalasi kabel terstruktur, serta pengujian konektivitas menggunakan LAN tester."
+        };
+
+        const badges = document.querySelectorAll('.skill-badge');
+        const descBox = document.getElementById('skill-desc');
+
+        badges.forEach(badge => {
+            badge.addEventListener('click', () => {
+                const namaSkil = badge.textContent.trim();
+                descBox.innerHTML = `<strong>${namaSkil}:</strong> <br> ${infoSkil[namaSkil]}`;
+                descBox.style.display = 'block';
+            });
+        });
+    </script>
+
+</body>
+</html>
